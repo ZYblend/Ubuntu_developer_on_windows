@@ -33,7 +33,6 @@ It is often useful or necessary to run graphical tools within WSL2, and the foll
 First, download and install [VcXsrv](https://sourceforge.net/projects/vcxsrv/), which is an X server that will run on windows. Launch it, but on the "Extra Settings" page, deselect "Native opengl", and select "Disable access control". On the next page, you can click "Save configuration" to create a shortcut file that will launch it with these settings by default in the future. You will need to ensure the program is running (it will be visible in your tray) any time in the future you want to forward graphics from WSL2 to Windows.
 > **You will need to re-launch the program, by double-clicking the saved configuration you just made, every time you restart your PC in the future.**
 >
-> Simply close out of any Windows Firewall windows; we will set the proper rule in the following step.
 
 Second, append the following to your `bashrc` as before, so that WSL2 can find the X Server running on windows.
 ```bash
