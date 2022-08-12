@@ -6,13 +6,15 @@ WSL2 is essentially a high-performance virtual machine capable of running Linux 
 Microsoft provides [detailed instructions](https://docs.microsoft.com/en-us/windows/wsl/install), but it boils down to launching Powershell as an admin.
 
 Steps:
-1. Choose the ubuntu image and Install
+1. **Choose the ubuntu image and Install**
+
 ```
 wsl --install -d Ubuntu-18.04
 ```
 Note: you can check all online ubuntu images by ```wsl --list -o```.
 
-2.Configure your ubuntu vm
+2. **Configure your ubuntu vm**
+
 - set your account and passcode for the ubuntu VM.
 - update packages:
 ```
@@ -24,7 +26,8 @@ sudo apt upgrades -y
 sudo apt install gedit
 ```
 
-3. setup display for VM
+3. **setup display for VM**
+
 It is often useful or necessary to run graphical tools within WSL2, and the following steps will allow you to do that. WSL2 does not have direct access to the host machine's display and requires forwarding rendering instructions to the host using an X server.
 
 First, download and install [VcXsrv](https://sourceforge.net/projects/vcxsrv/), which is an X server that will run on windows. Launch it, but on the "Extra Settings" page, deselect "Native opengl", and select "Disable access control". On the next page, you can click "Save configuration" to create a shortcut file that will launch it with these settings by default in the future. You will need to ensure the program is running (it will be visible in your tray) any time in the future you want to forward graphics from WSL2 to Windows.
@@ -52,9 +55,9 @@ This is simply a visual upgrade to the default terminal. Since the Windows Store
 Visual Studio Code is a free IDE that integrates nicely with with the tools we've installed. Install it from the official [downloads](https://code.visualstudio.com/download) page, then launch it and install the following extensions (extensions are on the 5th icon down from the top, on the left sidebar):
 - Remote - WSL (ms-vscode-remote.remote-containers)
 - Remote - Containers (ms-vscode-remote.remote-wsl)
-> You may need to be connected to the Ford network to install extensions
+- git history
 
-As a workaround to what seems to be a bug in VSCode, add the following to your `bashrc`:
+Add the following to your `bashrc`:
 ```bash
 #VSCode display workaround
 export WSL_DISPLAY=$DISPLAY
