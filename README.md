@@ -19,7 +19,7 @@ Note: you can check all online ubuntu images by ```wsl --list -o```.
 - update packages:
 ```
 sudo apt update
-sudo apt upgrades -y
+sudo apt upgrade -y
 ```
 - install gedit
 ```
